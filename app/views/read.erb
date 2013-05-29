@@ -6,7 +6,8 @@
   </div><br><br>
 
   <div id='update-note'>
-    <a href='/update'>Update Note</a>
+    <a href='/update/<%= @note.id %>'>Update Note</a>
+    <a href='/delete/<%= @note.id %>'>Delete Note</a>
   </div>
 
   <div id='return-home'>

@@ -1,0 +1,19 @@
+<div id='read-box'>
+  <h2><%= @note.title %></h2><br><br>
+
+  <div id='note-content'>
+    <form action="/update/<%= @note.id %>" method="post" id='edit'>
+      <input type='hidden' value='put' name='_method'>
+      <textarea name="content" cols=21 rows=10 required><%= @note.content %></textarea><br><br>
+      <input type="submit" id='notfoo'>  
+    </form> 
+  </div><br><br>
+
+  <div id='update-note'>
+    <a href='/update/<%= @note.id %>'>Update Note</a>
+  </div>
+
+  <div id='return-home'>
+    <a href='/'>Return Home</a>
+  </div>
+</div>

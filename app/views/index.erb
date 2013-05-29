@@ -9,9 +9,9 @@
 </div>
 
 <div id='nav'>  
+   <% Note.all.each do |note| %>
   <tr>
-    <% Note.all.each do |note| %>
     <td><a href='/read/<%= note.id %>'><%= note.title %></a></td>
   <tr>
-    <% end %>
+     <% end %>
 </div>

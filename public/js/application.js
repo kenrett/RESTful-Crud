@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('#note').on('submit', function(e) {
+  $(document).on('submit', '#note', function(e) {
     e.preventDefault();
 
     $.ajax({
@@ -7,10 +7,11 @@ $(document).ready(function() {
       url: '/create',
       data: $(this).serialize()
     }).done(function(response) {
-      window.abcd = response;
-      console.log(response);
-      console.log("Yo");
-      $('#nav').append(response.note.title);
+      // console.log(response);
+      // console.log("Yo");
+      var link = "<a href='/read/" + response.note.id + "'>" +
+                    response.note.title + '</a>';
+      $('#nav').append(link);
     // }).fail(function(data) {
     //   console.log(data);
     //   $('#note').append('<p>Oops! Something went wrong');
