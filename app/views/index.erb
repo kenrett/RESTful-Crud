@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>Welcome to CRUDdy Notes!</h1>
+
+  <form id='note' action="/create" method="post">
+    <input type="text" name="title" placeholder='Title'required><br><br>
+    <textarea name='content' placeholder='Enter note here!' form='note' cols=21 rows=10 required></textarea><br><br>
+    <input type="submit" id='foo'>  
+  </form> 
+</div>
+
+<div id='nav'>  
+  <tr>
+    <% Note.all.each do |note| %>
+    <td><a href='/read/<%= note.id %>'><%= note.title %></a></td>
+  <tr>
+    <% end %>
+</div>
